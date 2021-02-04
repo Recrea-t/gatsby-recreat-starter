@@ -1,13 +1,13 @@
 {
-  "name": "recreat",
+  "name": "gatsby-recreat-starter",
   "version": "1.0.0",
-  "private": true,
-  "description": "Recrea't website",
-  "author": "davidgit",
+  "private": false,
+  "description": "Recrea't Gatsby starter",
+  "author": "Recrea-t",
   "keywords": [
-    "gatsby"
+    "gatsby", "chakra-ui"
   ],
-  "license": "0BSD",
+  "license": "MIT",
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^1.0.1",
     "@chakra-ui/icons": "^1.0.3",
