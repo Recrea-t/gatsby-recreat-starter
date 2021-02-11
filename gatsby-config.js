@@ -1,6 +1,6 @@
-const config = require("./site-config.json");
+const config = require("./site-config.json")
 
-console.log(config);
+console.log(config)
 
 module.exports = {
   siteMetadata: config,
@@ -24,10 +24,18 @@ module.exports = {
         icon_options: {
           purpose: `any maskable`,
         },
+        cache_busting_mode: "none",
       },
     },
     // The offline plugin must be listed after the manifest plugin
-    "gatsby-plugin-offline",
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/icon-path*"],
+        },
+      },
+    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
@@ -66,7 +74,10 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 2048,
+              maxWidth: 1380,
+              quality: 90,
+              withWebp: true,
+              linkImagesToOriginal: false,
             },
           },
           {
@@ -91,4 +102,4 @@ module.exports = {
       },
     },
   ],
-};
+}
