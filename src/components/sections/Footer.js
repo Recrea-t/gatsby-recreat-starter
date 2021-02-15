@@ -1,8 +1,8 @@
-import React from "react";
-import { Link as GatsbyLink } from "gatsby";
-import { Box, Flex, HStack, Text, Link, StackDivider } from "@chakra-ui/react";
+import React from "react"
+import { Link as GatsbyLink } from "gatsby"
+import { Box, Flex, HStack, Text, Link, StackDivider } from "@chakra-ui/react"
 
-const Footer = (props) => {
+const Footer = props => {
   return (
     <Flex
       as="footer"
@@ -19,17 +19,20 @@ const Footer = (props) => {
           <Text>
             &copy; {new Date().getFullYear()} {props.title}
           </Text>
+          <Link to="/avis-legal/" title="Avís legal" as={GatsbyLink}>
+            Avís legal
+          </Link>
           <Link
-            to="/politica-de-privadesa"
-            title="Política de privadesa"
+            to="/politica-de-proteccio-de-dades/"
+            title="Política de protecció de dades personals"
             as={GatsbyLink}
           >
-            Política de privadesa
+            Política de protecció de dades
           </Link>
         </HStack>
       </Box>
     </Flex>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
