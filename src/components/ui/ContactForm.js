@@ -1,6 +1,5 @@
-import React from "react";
-import { Link as GatsbyLink } from "gatsby";
-import { motion } from "framer-motion";
+import React from "react"
+import { Link as GatsbyLink } from "gatsby"
 
 import {
   VStack,
@@ -10,29 +9,25 @@ import {
   Input,
   Textarea,
   Checkbox,
-  Button,
-} from "@chakra-ui/react";
-import { useToast } from "@chakra-ui/react";
-import { Formik, Form, Field } from "formik";
-
-const MotionButton = motion.custom(Button);
+} from "@chakra-ui/react"
+import { MotionButton } from "../../theme/utils"
+import { useToast } from "@chakra-ui/react"
+import { Formik, Form, Field } from "formik"
 
 const ContactForm = () => {
-  const toast = useToast();
+  const toast = useToast()
 
   const placeholderStyles = {
     color: "white",
     fontWeight: "hairline",
     textTransform: "uppercase",
-  };
+  }
 
-  const encode = (data) => {
+  const encode = data => {
     return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
 
   return (
     <Formik
@@ -52,27 +47,27 @@ const ContactForm = () => {
           }),
         })
           .then(() => {
-            actions.resetForm();
+            actions.resetForm()
             toast({
               title: "Missatge enviat.",
               description: "Aviat et respondrem.",
               status: "success",
               duration: 9000,
               isClosable: true,
-            });
+            })
           })
-          .catch((error) => alert(error))
-          .finally(() => actions.setSubmitting(false));
+          .catch(error => alert(error))
+          .finally(() => actions.setSubmitting(false))
       }}
-      validate={(values) => {
-        const errors = {};
+      validate={values => {
+        const errors = {}
         if (!values.conditions) {
-          errors.conditions = "Has d'acceptar la política de privacitat.";
+          errors.conditions = "Has d'acceptar la política de privacitat."
         }
-        return errors;
+        return errors
       }}
     >
-      {(props) => (
+      {props => (
         <Form
           name="contacte-web"
           data-netlify="true"
@@ -176,7 +171,7 @@ const ContactForm = () => {
         </Form>
       )}
     </Formik>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

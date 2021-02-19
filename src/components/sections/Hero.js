@@ -1,13 +1,11 @@
-import React from "react";
-import { Link as GatsbyLink } from "gatsby";
-import { motion } from "framer-motion";
+import React from "react"
+import { Link as GatsbyLink } from "gatsby"
 
-import { Flex, Box, Container, Text, Button } from "@chakra-ui/react";
+import { Flex, Box, Container, Text } from "@chakra-ui/react"
+import { MotionButton } from "../../theme/utils"
 
-const MotionButton = motion.custom(Button);
-
-const Hero = (props) => {
-  const { frontmatter } = props.data.markdownRemark;
+const Hero = props => {
+  const { frontmatter } = props.data.markdownRemark
   return (
     <Box w="full" mb={8} py={4} bg="mangoTango.500" color="white">
       <Container>
@@ -33,7 +31,7 @@ const Hero = (props) => {
         </Flex>
       </Container>
     </Box>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

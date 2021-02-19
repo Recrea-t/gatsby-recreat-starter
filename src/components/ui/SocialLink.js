@@ -1,11 +1,9 @@
-import React from "react";
-import { Link, Icon } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import React from "react"
+import { Icon } from "@chakra-ui/react"
+import { MotionLink } from "../../theme/utils"
 
-const MotionLink = motion.custom(Link);
-
-const SocialLink = (props) => {
-  const { item, icon } = props;
+const SocialLink = props => {
+  const { item, icon } = props
   return (
     <MotionLink
       href={`${item.baseUrl}${item.username}`}
@@ -23,7 +21,7 @@ const SocialLink = (props) => {
     >
       <Icon as={icon} h={8} w={8} />
     </MotionLink>
-  );
-};
+  )
+}
 
-export default SocialLink;
+export default SocialLink

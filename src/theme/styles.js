@@ -1,7 +1,7 @@
 const styles = {
   global: {
     html: {
-      scrollBehavior: "smooth",
+      //scrollBehavior: "smooth",
       //scrollMarginTop: "6rem",
     },
     body: {
@@ -13,6 +13,6 @@ const styles = {
       },
     },
   },
-};
+}
 
-export default styles;
+export default styles

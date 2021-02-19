@@ -1,16 +1,14 @@
-import React from "react";
-import { Link as GatsbyLink } from "gatsby";
-import { Text, Link } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import React from "react"
+import { Link as GatsbyLink } from "gatsby"
+import { Link } from "@chakra-ui/react"
+import { MotionText } from "../../theme/utils"
 
-const MotionText = motion.custom(Text);
+const NavLink = props => {
+  const { children, onClick, isLast, to = "/", ...rest } = props
 
-const NavLink = (props) => {
-  const { children, onClick, isLast, to = "/", ...rest } = props;
-
-  const isPartiallyActive = (props) => {
-    return props.isPartiallyCurrent ? { style: { color: "#63656A" } } : {};
-  };
+  const isPartiallyActive = props => {
+    return props.isPartiallyCurrent ? { style: { color: "#63656A" } } : {}
+  }
 
   return (
     <MotionText
@@ -31,7 +29,7 @@ const NavLink = (props) => {
         {children}
       </Link>
     </MotionText>
-  );
-};
+  )
+}
 
-export default NavLink;
+export default NavLink
