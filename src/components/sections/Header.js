@@ -1,15 +1,15 @@
-import React from "react";
-import { Link as GatsbyLink } from "gatsby";
-import { Box, Flex, Image, Link, useBreakpointValue } from "@chakra-ui/react";
+import React from "react"
+import { Link as GatsbyLink } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import { Flex, Link, useBreakpointValue } from "@chakra-ui/react"
 
-import NavLink from "../ui/NavLink";
-import ToggleMenu from "../ui/ToggleMenu";
-import logo from "../../images/LogoRecreat.svg";
+import NavLink from "../ui/NavLink"
+import ToggleMenu from "../ui/ToggleMenu"
 
-const Header = (props) => {
-  const isSmallDevice = useBreakpointValue({ base: true, md: false });
-  const [show, setShow] = React.useState(false);
-  const toggleMenu = () => setShow(!show);
+const Header = () => {
+  const isSmallDevice = useBreakpointValue({ base: true, md: false })
+  const [show, setShow] = React.useState(false)
+  const toggleMenu = () => setShow(!show)
 
   const MenuItems = ({ onClick }) => {
     return (
@@ -24,54 +24,55 @@ const Header = (props) => {
           Contacte
         </NavLink>
       </>
-    );
-  };
+    )
+  }
 
   return (
-    <Box
+    <Flex
       as="nav"
+      h={show ? "auto" : "100px"}
+      w="full"
       pos="fixed"
       top="0"
       right="0"
       left="0"
-      w="full"
       zIndex="1"
+      align="center"
+      justify="space-between"
+      p={4}
+      mx="auto"
       bg="white"
+      color="mangoTango.500"
       borderBottom="1px"
       borderBottomColor="mangoTango.500"
+      wrap="wrap"
     >
-      <Flex
-        maxW="1200px"
-        mx="auto"
-        align="center"
-        justify="space-between"
-        wrap="wrap"
-        p={4}
-        color="mangoTango.500"
-        {...props}
-      >
-        <Flex align="center">
-          <Link to="/" title="Inici" as={GatsbyLink}>
-            <Image src={logo} alt="Logo Recrea't" />
-          </Link>
+      <Link to="/" title="Inici" as={GatsbyLink}>
+        <StaticImage
+          src="../../images/LogoRecreat.png"
+          alt="Logotip Recrea't"
+          loading="eager"
+          layout="fixed"
+          placeholder="tracedSVG"
+          width={200}
+        />
+      </Link>
+
+      {isSmallDevice ? (
+        <ToggleMenu show={show} toggleMenu={toggleMenu}>
+          <MenuItems onClick={toggleMenu} />
+        </ToggleMenu>
+      ) : (
+        <Flex
+          align="center"
+          direction="row"
+          justify={{ md: "space-between", lg: "flex-end" }}
+        >
+          <MenuItems />
         </Flex>
+      )}
+    </Flex>
+  )
+}
 
-        {isSmallDevice ? (
-          <ToggleMenu show={show} toggleMenu={toggleMenu}>
-            <MenuItems onClick={toggleMenu} />
-          </ToggleMenu>
-        ) : (
-          <Flex
-            align="center"
-            direction="row"
-            justify={{ md: "space-between", lg: "flex-end" }}
-          >
-            <MenuItems />
-          </Flex>
-        )}
-      </Flex>
-    </Box>
-  );
-};
-
-export default Header;
+export default Header

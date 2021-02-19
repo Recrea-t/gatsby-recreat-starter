@@ -25,7 +25,7 @@
     "framer-motion": "^3.2.1",
     "gatsby": "^2.30.3",
     "gatsby-core-utils": "^1.10.0",
-    "gatsby-image": "^2.9.0",
+    "gatsby-plugin-image": "^0.7.1",
     "gatsby-plugin-manifest": "^2.10.0",
     "gatsby-plugin-metricool": "^1.0.7",
     "gatsby-plugin-netlify": "^2.9.0",
