@@ -1,5 +1,5 @@
-import React from "react";
-import useSiteMetadata from "../siteMetadata";
+import React from "react"
+import useSiteMetadata from "../siteMetadata"
 
 import {
   Flex,
@@ -11,25 +11,32 @@ import {
   VStack,
   HStack,
   Icon,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"
 
-import SocialLink from "../ui/SocialLink";
-import ContactForm from "../ui/ContactForm";
+import SocialLink from "../ui/SocialLink"
+import ContactForm from "../ui/ContactForm"
 
-import { FaMapMarkerAlt } from "@react-icons/all-files/fa/FaMapMarkerAlt";
-import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare";
-import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
-import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaMapMarkerAlt } from "@react-icons/all-files/fa/FaMapMarkerAlt"
+import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare"
+import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare"
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 
 const Contact = () => {
-  const { organization, social } = useSiteMetadata();
+  const { organization, social } = useSiteMetadata()
 
   return (
-    <Box w="full" py={4} bg="mangoTango.500" color="white">
+    <Box
+      id="contacte"
+      w="full"
+      py={4}
+      bg="mangoTango.500"
+      color="white"
+      style={{
+        scrollMarginTop: "100px",
+      }}
+    >
       <Container>
-        <Heading variant="in-index" id="contacte">
-          Contacte
-        </Heading>
+        <Heading variant="in-index">Contacte</Heading>
 
         <Flex
           align={["center", "center", "center", "center"]}
@@ -76,7 +83,7 @@ const Contact = () => {
         </Flex>
       </Container>
     </Box>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
