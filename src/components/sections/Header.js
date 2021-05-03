@@ -48,21 +48,19 @@ const Header = () => {
         align="center"
         justify="space-between"
         mx="auto"
-        px={4}
+        p={4}
         wrap="wrap"
       >
-        <Center h="100px">
-          <Link to="/" title="Inici" as={GatsbyLink}>
-            <StaticImage
-              src="../../images/LogoRecreat.png"
-              alt="Logotip Recrea't"
-              loading="eager"
-              layout="fixed"
-              placeholder="tracedSVG"
-              width={200}
-            />
-          </Link>
-        </Center>
+        <Link to="/" title="Inici" as={GatsbyLink}>
+          <StaticImage
+            src="../../images/LogoRecreat.png"
+            alt="Logotip Recrea't"
+            loading="eager"
+            layout="fixed"
+            placeholder="tracedSVG"
+            width={200}
+          />
+        </Link>
 
         <ToggleMenu show={show} toggleMenu={toggleMenu}>
           <MenuItems onClick={toggleMenu} />
