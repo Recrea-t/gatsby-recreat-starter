@@ -19,7 +19,6 @@
     "@fontsource/playfair-display": "^4.2.2",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^0.21.1",
-    "chakra-ui-markdown-renderer": "^1.1.0",
     "cross-env": "^7.0.3",
     "formik": "^2.2.6",
     "framer-motion": "^4.1.3",
