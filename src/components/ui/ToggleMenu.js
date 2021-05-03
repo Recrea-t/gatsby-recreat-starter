@@ -37,7 +37,7 @@ const ToggleMenu = props => {
 
       <Box display={show ? "block" : "none"} flexBasis="100%">
         <Collapse in={show} unmountOnExit>
-          <Flex align="center" justify="center" direction="column" pt={4}>
+          <Flex align="center" justify="center" direction="column" py={4}>
             {children}
           </Flex>
         </Collapse>

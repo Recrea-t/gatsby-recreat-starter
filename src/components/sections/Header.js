@@ -1,7 +1,7 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { Flex, Link } from "@chakra-ui/react"
+import { Flex, Link, Box, Center } from "@chakra-ui/react"
 
 import NavLink from "../ui/NavLink"
 import ToggleMenu from "../ui/ToggleMenu"
@@ -27,49 +27,57 @@ const Header = () => {
   }
 
   return (
-    <Flex
+    <Box
       as="nav"
-      h={show ? "auto" : "100px"}
       w="full"
+      h={show ? "auto" : "100px"}
       pos="fixed"
       top="0"
       right="0"
       left="0"
       zIndex="1"
-      align="center"
-      justify="space-between"
-      p={4}
-      mx="auto"
       bg="white"
       color="mangoTango.500"
       borderBottom="1px"
       borderBottomColor="mangoTango.500"
-      wrap="wrap"
     >
-      <Link to="/" title="Inici" as={GatsbyLink}>
-        <StaticImage
-          src="../../images/LogoRecreat.png"
-          alt="Logotip Recrea't"
-          loading="eager"
-          layout="fixed"
-          placeholder="tracedSVG"
-          width={200}
-        />
-      </Link>
-
-      <ToggleMenu show={show} toggleMenu={toggleMenu}>
-        <MenuItems onClick={toggleMenu} />
-      </ToggleMenu>
-
       <Flex
-        display={{ base: "none", md: "inherit" }}
+        h="full"
+        w="full"
+        maxW="1200px"
         align="center"
-        direction="row"
-        justify={{ md: "space-between", lg: "flex-end" }}
+        justify="space-between"
+        mx="auto"
+        px={4}
+        wrap="wrap"
       >
-        <MenuItems />
+        <Center h="100px">
+          <Link to="/" title="Inici" as={GatsbyLink}>
+            <StaticImage
+              src="../../images/LogoRecreat.png"
+              alt="Logotip Recrea't"
+              loading="eager"
+              layout="fixed"
+              placeholder="tracedSVG"
+              width={200}
+            />
+          </Link>
+        </Center>
+
+        <ToggleMenu show={show} toggleMenu={toggleMenu}>
+          <MenuItems onClick={toggleMenu} />
+        </ToggleMenu>
+
+        <Flex
+          display={{ base: "none", md: "inherit" }}
+          align="center"
+          direction="row"
+          justify={{ md: "space-between", lg: "flex-end" }}
+        >
+          <MenuItems />
+        </Flex>
       </Flex>
-    </Flex>
+    </Box>
   )
 }
 
